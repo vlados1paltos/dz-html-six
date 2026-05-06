@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 
+    (Задание на форматирование) Внешний css-файл подключается в html внутри тега link.
+    Пример ниже. 
+    -->
+    <link rel="stylesheet" href="style.css">
+    <title>Table</title>
+
+    <style>
+
+        /* Задал ширину, центрировал, убирал двойные границы, так же добавил красивый шрифт. */
+     .schedule {
+            width: 700px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+        }
+
+        /* 
+        Задал размер шрифта заголовка в px, жирность заголовка таблицы - bold,  
+        отступ таблицы от ее заголовка в 10px.
+        Добавил красный цвет тексту заголовка.
+        */
+        .schedule__caption {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ff0815;
+        }
+
+        /* Поменял фон шапки таблицы на синий, почему бы и нет. */
+        .schedule__head {
+            background-color: #076fef;
+        }
+
+        /* 
+        Подвалу таблицы придал зеленый фон.
+        Шрифт выбрал - italic.
+        */
+        .schedule__footer {
+            background-color: #04e516;
+            font-style: italic;
+        }
+        
+        /* 
+        Задал рамку желтого цвета шапке, выглядит странно, но ок.
+        Задал отступы таблицы от текста в 10px(padding).
+        Текст выровнял по центру(text-align).
+        */
+        .schedule__header,
+        .schedule__cell {
+            border: 1px solid #f0ce0b;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+   <table class="schedule">
+    <caption class="schedule__caption">
+        Расписание занятий 1-х курсов на второй семестр
+    </caption>
+
+    <thead class="schedule__head">
+        <tr class="schedule__row">
+            <th class="schedule__header">Дни недели</th>
+            <th class="schedule__header">Время занятий</th>
+            <th class="schedule__header">Предметы</th>
+        </tr>
+    </thead>
+
+    <tbody class="schedule__body">
+        <tr class="schedule__row">
+            <td class="schedule__cell">Понедельник</td>
+
+            <!-- (Дополнительное задание) Добавил атрибут colspan. Он нужен для объединения ячеек по горизонтали.-->
+            <td class="schedule__cell" colspan="2">День самостоятельных занятий</td>
+        </tr>
+
+         <tr class="schedule__row">
+            <td class="schedule__cell">Вторник</td>
+            <td class="schedule__cell" colspan="2">Литературное мастерство: <br>поэзия - ауд. 17 (время 18:30)</td>
+        </tr>
+
+         <tr class="schedule__row">
+
+            <!-- (Дополнительное задание) Добавил атрибут rowspan. Он нужен для объединения ячеек по вертикали. -->
+            <td class="schedule__cell" rowspan="2">Среда</td>
+            <td class="schedule__cell" rowspan="2">18:30-20:00 <br>20:05-21:35</td>
+            <td class="schedule__cell" rowspan="2">История искусств - ауд.3 <br>История русской литературы - ауд.7</td>
+        </tr>
+
+         <tr class="schedule__row">
+        </tr>
+
+         <tr class="schedule__row">
+            <td class="schedule__cell">Четверг</td>
+            <td class="schedule__cell">18:35-20:05</td>
+            <td class="schedule__cell">Язык и текст - ауд.8</td>
+        </tr>
+
+         <tr class="schedule__row">
+            <td class="schedule__cell">Пятница</td>
+            <td class="schedule__cell">16:30-18:00</td>
+            <td class="schedule__cell">Теория и практика художественного перевода - ауд.13</td>
+        </tr>
+    </tbody>
+
+    <tfoot class="schedule__footer">
+        <tr class="schedule__row">
+            <td class="schedule__cell" colspan="3">Отделение литературного творчества <br>Начало семестра - 4 февраля</td>
+        </tr>
+    </tfoot>
+
+   </table>
+</body>
+</html>
